@@ -24,8 +24,8 @@ namespace ExamenProgra3I
             int[,] numeros = new int[matriz, matriz];//Creo la matriz y le asigno la variale matriz porque asi le digo de cuanto es la matriz.
             int contnumeros = 0;//Contador que se va utlizar para recorrer el arreglo numerosmat.
             int cont = 0;//Contador que se va utlizar para recorrer el arreglo numerosmat.
-            int Diagonal;//Entero para guardar la suma de la primer diagonal.
-            int Diagonal2;//Entero para guardar la suma de la segunda diagonal.
+            int Diagonal=0;//Entero para guardar la suma de la primer diagonal.
+            int Diagonal2=0;//Entero para guardar la suma de la segunda diagonal.
             int resultado=0;//Entero que guarda la diferencia entre las diagonales para luego retornarla.
 
             for (int i = 0; i < parts.Length; i++)//Ciclo para recorrer el arreglo parts.
@@ -48,10 +48,18 @@ namespace ExamenProgra3I
                     cont++;//Incremento el contador que va llevar la posicion del arreglo numerosmat.
                 }
             }
-            Diagonal = numeros[0, 0] + numeros[1, 1] + numeros[2, 2];//Guardo la suma de la primera diagonal.
-            Diagonal2 = numeros[0, 2] + numeros[1, 1] + numeros[2, 0];//Guardo la suma de la segunda diagonal.
-            resultado = Diagonal - Diagonal2;//Guardo la diferencia de las diagonales.
-            return resultado;//retorno la diferencia.
+
+            for (int i = 0; i < numeros.GetLength(0); i++)//Ciclo para recorrer las filas de la matriz.
+            {
+                Diagonal = Diagonal + numeros[i, i];//Suma la diagonal de la matriz.
+            }
+            for (int i = 0; i < numeros.GetLength(0); i++)//Ciclo para recorrer las filas de la matriz.
+            {
+                    Diagonal2 = Diagonal2 + numeros[i, (numeros.GetLength(0) - 1) - i];//Suma la diagonal de la matriz.              
+            }
+            resultado = Diagonal - Diagonal2;//Guardo la diferencia de las diagonales
+            
+            return resultado;//Retorno la diferencia
         }
     }
 }
