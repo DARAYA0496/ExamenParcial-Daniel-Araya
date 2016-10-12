@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ExamenProgra3
-{
+{ 
     class CamelCase
     {
+        //Daniel Araya Araya;
         char[] letras;//Creo un arreglo para guardar el string.
         int cont = 1;//Creo un contador que va servir para llevar el numero de mayusculas.
         /// <summary>

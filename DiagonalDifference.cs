@@ -8,6 +8,7 @@ namespace ExamenProgra3I
 {
     class DiagonalDifference
     {
+        //Daniel Araya Araya.
         int matriz;//Entero para saber decuanto es la  matriz.
         String[] parts2;//Arreglo donde separo el string a numeros.
 
